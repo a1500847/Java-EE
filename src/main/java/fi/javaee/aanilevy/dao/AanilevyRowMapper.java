@@ -16,7 +16,7 @@ public class AanilevyRowMapper implements RowMapper<Aanilevy>{
 		a.setTitle(rs.getString("title"));
 		a.setArtist(rs.getString("artist"));
 		a.setYear(rs.getInt("year"));
-		a.setImagePath(rs.getString("imagepath"));
+		a.setImgLocation(rs.getString("imglocation"));
 		
 		return a;
 	}

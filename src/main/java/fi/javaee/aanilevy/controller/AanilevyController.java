@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,17 +18,8 @@ import fi.javaee.aanilevy.dao.AanilevyDAO;
 public class AanilevyController {
 	
 	@Inject
-    @Qualifier
 	private AanilevyDAO dao;
-	
-	public AanilevyDAO getDao() {
-		return dao;
-	}
 
-	public void setDao(AanilevyDAO dao) {
-		this.dao = dao;
-	}
-	
 	//Listaa kaikki levyt
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String getList(Model model) {

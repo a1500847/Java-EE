@@ -1,28 +1,25 @@
 package fi.javaee.aanilevy.bean;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class AanilevyImpl implements Aanilevy{
 	
 	private int id;
 	private String title;
 	private String artist;
 	private int year;
-	private String imagePath;
+	private String imgLocation;
 	
 	public AanilevyImpl() {
 		super();
 	}
 
 	public AanilevyImpl(int id, String title, String artist, int year,
-			String imagePath) {
+			String imgLocation) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.artist = artist;
 		this.year = year;
-		this.imagePath = imagePath;
+		this.imgLocation = imgLocation;
 	}
 
 	public int getId() {
@@ -57,18 +54,18 @@ public class AanilevyImpl implements Aanilevy{
 		this.year = year;
 	}
 
-	public String getImagePath() {
-		return imagePath;
+	public String getImgLocation() {
+		return imgLocation;
 	}
 
-	public void setImagePath(String imagePath) {
-		this.imagePath = imagePath;
+	public void setImgLocation(String imgLocation) {
+		this.imgLocation = imgLocation;
 	}
 
 	@Override
 	public String toString() {
 		return "AanilevyImpl [id=" + id + ", title=" + title + ", artist="
-				+ artist + ", year=" + year + ", imagePath=" + imagePath + "]";
+				+ artist + ", year=" + year + ", imgLocation=" + imgLocation + "]";
 	}
 	
 	

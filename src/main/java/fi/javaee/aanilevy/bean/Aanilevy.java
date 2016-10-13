@@ -18,8 +18,8 @@ public interface Aanilevy {
 	
 	public abstract void setYear(int year);
 	
-	public abstract String getImagePath();
+	public abstract String getImgLocation();
 
-	public abstract void setImagePath(String imagepath);
+	public abstract void setImgLocation(String imgLocation);
 	
 }

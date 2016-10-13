@@ -1,0 +1,30 @@
+h1 {
+	text-align:center;
+	font-family: arial;
+}
+
+#levylista {
+	width:70%;
+	margin: 0 auto; 
+	overflow:auto;
+	border-spacing: 0;
+}
+
+#levy {
+	height:5em;
+}
+
+#levy img {height:5em;}
+
+#levy td {
+	font-family: arial;
+	font-size: 13pt;
+	
+}
+
+#levylista #levy:nth-child(even) {
+    background-color: #eee;
+}
+#levylista #levy:nth-child(odd) {
+    background-color: #fff;
+}
