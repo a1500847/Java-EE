@@ -22,24 +22,28 @@ public class AdminController {
 	@Inject
 	private AanilevyDAO dao;
 
-	@RequestMapping(value = "/edit", method = RequestMethod.GET)
+	// näytä formi
+	@RequestMapping(value = "/create", method = RequestMethod.GET)
 	public String adminsivu(Model model) {
 		Aanilevy tyhjaAanilevy = new AanilevyImpl();
 		model.addAttribute("aanilevy", tyhjaAanilevy);
-		return "admin/edit";
+		return "admin/create";
 	}
 
-	@RequestMapping (value ="/edit", method = RequestMethod.POST)
+	// hae syötetyt tiedot
+	@RequestMapping (value ="/create", method = RequestMethod.POST)
 	public String create(@ModelAttribute(value="aanilevy") @Valid AanilevyImpl a, BindingResult result) {
 		if (result.hasErrors()) {
-			return "admin/edit";
+			return "admin/create";
 		} else {
+			System.out.println(a.toString());
 			dao.talleta(a);
-			return "redirect:/admin/edit/" + a.getId();
+			return "redirect:/admin/create/" + a.getId();
 		}
 	}
 	
-	@RequestMapping(value="edit/{id}", method=RequestMethod.GET)
+	// näytä yksi äänilevy
+	@RequestMapping(value="create/{id}", method=RequestMethod.GET)
 	public String getView(@PathVariable Integer id, Model model) {
 		Aanilevy aanilevy = dao.etsi(id);
 		model.addAttribute("aanilevy", aanilevy);

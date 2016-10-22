@@ -3,28 +3,28 @@ h1 {
 	font-family: arial;
 }
 
-#levylista {
-	width:70%;
+.levylista {
+	
 	margin: 0 auto; 
 	overflow:auto;
 	border-spacing: 0;
 }
 
-#levy {
-	height:5em;
+.levy {
+	height:7em;
 }
 
-#levy img {height:5em;}
+.levy img {height:7em;}
 
-#levy td {
+.levy td {
 	font-family: arial;
-	font-size: 13pt;
-	
+	font-size: 11pt;
+	padding:0px 100px 0px 0px;
 }
 
-#levylista #levy:nth-child(even) {
+.levylista #levy:nth-child(even) {
     background-color: #eee;
 }
-#levylista #levy:nth-child(odd) {
+.levylista #levy:nth-child(odd) {
     background-color: #fff;
 }

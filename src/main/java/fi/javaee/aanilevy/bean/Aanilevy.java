@@ -1,5 +1,7 @@
 package fi.javaee.aanilevy.bean;
 
+import java.util.Date;
+
 public interface Aanilevy {
 	
 	public abstract int getId();
@@ -14,9 +16,9 @@ public interface Aanilevy {
 
 	public abstract void setArtist(String artist);
 	
-	public abstract int getYear();
+	public abstract Integer getYear();
 	
-	public abstract void setYear(int year);
+	public abstract void setYear(Integer year);
 	
 	public abstract String getImgLocation();
 

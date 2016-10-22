@@ -25,6 +25,6 @@ public class AanilevyController {
 	public String getList(Model model) {
 		List<Aanilevy> levyt = new ArrayList<Aanilevy>(dao.haeKaikki());
 		model.addAttribute("levyt", levyt);
-		return "welcome";
+		return "albumlist";
 	}
 }

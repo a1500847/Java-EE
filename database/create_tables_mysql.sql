@@ -2,6 +2,6 @@ CREATE TABLE album (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 title VARCHAR(255) NOT NULL,
 artist VARCHAR(255) NOT NULL,
-year INT(4),
-imglocation VARCHAR(255)
+year SMALLINT(4),
+imglocation VARCHAR(255) DEFAULT 'images/ic_album_white_48dp_2x.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
