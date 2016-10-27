@@ -15,7 +15,7 @@
 <body>
 
 <header>
-		<p class="heading"><spring:message code="admin.create.heading"/></p>
+		<p class="heading"><spring:message code="logo"/></p>
 		<nav>
 			<ul>
 			<sec:authorize var="loggedIn" access="hasRole('ROLE_ADMIN')" />
@@ -36,6 +36,7 @@
 	</header>
 
 <div id="sisalto">
+	<h1><spring:message code="admin.view.heading"/></h1>
 	<p class="Info"><spring:message code="admin.view.info"/></p>
 	
 	<div class="levy">

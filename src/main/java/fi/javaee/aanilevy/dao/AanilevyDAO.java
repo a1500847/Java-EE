@@ -18,7 +18,7 @@ public interface AanilevyDAO {
 	public abstract Aanilevy etsi(int id);
 
 	
-	//@PreAuthorize("hasRole('ROLE_ADMIN')")
-	//public abstract void poista(int id);
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	public abstract void poista(int id);
 	
 }

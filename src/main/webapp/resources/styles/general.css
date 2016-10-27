@@ -73,6 +73,7 @@ nav a, nav p {
 	padding: 10px;
     text-align: center;
     font-size: 13px;
+    overflow: auto;
 }
 
 .Info, .Error {

@@ -14,7 +14,7 @@
 <body>
 
 <header>
-		<p class="heading"><spring:message code="admin.create.heading"/></p>
+		<p class="heading"><spring:message code="logo"/></p>
 		<nav>
 			<ul>
 			<sec:authorize var="loggedIn" access="hasRole('ROLE_ADMIN')" />
@@ -36,6 +36,7 @@
 	
 	<div id="sisalto">
 	<div class="keskita">
+	<h1><spring:message code="admin.create.heading"/></h1>
 		<form:form modelAttribute="aanilevy" method="post">
 			<fieldset>
 				<legend><spring:message code="admin.create.legend" /></legend>
@@ -55,14 +56,14 @@
 				<p>
 					<form:errors path="year" cssClass="virheteksti"/><br>
 					<form:label path="year"><spring:message code="admin.create.year"/><span class="pakollinen">*</span></form:label>
-					<form:input path="year" cssErrorClass="virheellinenkentta"/> 
+					<form:input type="number" path="year" cssErrorClass="virheellinenkentta"/> 
 				</p>
 				<p>	
 					<br><br>
 					<form:label path="imgLocation"><spring:message code="admin.create.imglocation"/> </form:label>
-					<form:input path="imgLocation" cssErrorClass="virheellinenkentta"/>
+					<form:input path="imgLocation"/>
 				</p>
-				<button class="button" type="submit" class="pure-button"><spring:message code="admin.create.save"/></button>
+				<button class="button" type="submit"><spring:message code="admin.create.save"/></button>
 			</fieldset>
 		</form:form>
 		</div>

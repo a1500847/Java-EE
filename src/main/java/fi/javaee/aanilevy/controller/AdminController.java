@@ -36,7 +36,6 @@ public class AdminController {
 		if (result.hasErrors()) {
 			return "admin/create";
 		} else {
-			System.out.println(a.toString());
 			dao.talleta(a);
 			return "redirect:/admin/create/" + a.getId();
 		}
@@ -49,4 +48,7 @@ public class AdminController {
 		model.addAttribute("aanilevy", aanilevy);
 		return "admin/view";
 	}
+
+	
 }
+

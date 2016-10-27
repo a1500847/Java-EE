@@ -13,7 +13,7 @@
 </head>
 <body>
 	<header>
-		<p class="heading"><spring:message code="login.heading"/></p>
+		<p class="heading"><spring:message code="logo"/></p>
 		<nav>
 			<ul>
 				<li><a class="nav-element" href="<c:url value="/"/>"><spring:message code="back"/></a></li>
@@ -22,6 +22,7 @@
 	</header>
 	<div id="sisalto">  
 	<div class="keskita">
+	<h1><spring:message code="login.heading"/></h1>
 	<c:if test="${not empty loginerror}">
 		<p class="Error"><spring:message code="login.fail"/></p>
 	</c:if>
@@ -29,7 +30,7 @@
 		<p class="Info"><spring:message code="logout.success"/></p>
 	</c:if>
 	    <form action="<c:url value="j_spring_security_check" />" method="post">
-			<spring:message code="login.username"/> <input type='text' name='j_username' value=''><br>
+			<spring:message code="login.username"/> <input style="margin-bottom: 20px" type='text' name='j_username' value=''><br>
 			<spring:message code="login.password"/> <input type='password' name='j_password' /><br>
 			<button class="button" type="submit"><spring:message code="login.submit"/></button>
 		</form>

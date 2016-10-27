@@ -75,9 +75,16 @@ public class AanilevyDAOSpringJdbcImpl implements AanilevyDAO{
 	    try { 
 	    a = jdbcTemplate.queryForObject(sql , parametrit, mapper);
 	    } catch(IncorrectResultSizeDataAccessException e) {
+	    	System.out.println("Virhe tietokannasta haussa");
 	    	throw new AanilevyaEiLoydyPoikkeus(e);
 	    }
 		return a;
+	}
+
+	public void poista(int id) {
+		String sql = "delete from album where id = ?";
+		Object[] parametrit = new Object[] {id};
+		jdbcTemplate.update(sql, parametrit);
 	}
 	
 	
