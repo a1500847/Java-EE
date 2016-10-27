@@ -23,10 +23,10 @@
 	<div id="sisalto">  
 	<div class="keskita">
 	<c:if test="${not empty loginerror}">
-		<p class="Error">Sisäänkirjautuminen epäonnistui.</p>
+		<p class="Error"><spring:message code="login.fail"/></p>
 	</c:if>
 	<c:if test="${not empty loggedout}">
-		<p class="Info">Uloskirjautuminen onnistui</p>
+		<p class="Info"><spring:message code="logout.success"/></p>
 	</c:if>
 	    <form action="<c:url value="j_spring_security_check" />" method="post">
 			<spring:message code="login.username"/> <input type='text' name='j_username' value=''><br>
