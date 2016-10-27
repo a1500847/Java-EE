@@ -1,63 +1,53 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://www.springframework.org/tags"  prefix="spring"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link type="text/css" rel="stylesheet"
-	href="<c:url value="/resources/styles/general.css" />"
-	media="screen,projection" />
-<title>Äänilevykirjasto</title>
+<link type="text/css" rel="stylesheet" href="<c:url value="/resources/styles/general.css" />" media="screen,projection" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
+<title><spring:message code="albumlist.pagetitle"/></title>
 </head>
 <body>
-	<div id="header">
-
-		<sec:authorize var="loggedIn" access="hasRole('ROLE_ADMIN')" />
-		<c:choose>
-			<c:when test="${loggedIn}">
-	        Kirjautuneena: <sec:authentication
-					property="principal.username" />
-				<a href="<c:url value="/admin/create"/>">Adminsivulle</a>
-				<a href="<c:url value="j_spring_security_logout" />">Kirjaudu
-					ulos</a>
-			</c:when>
-			<c:otherwise>
-				<a href="<c:url value="login"/>">Kirjaudu</a>
-			</c:otherwise>
-		</c:choose>
-
-		<c:if test="${not empty loginerror}">
-			<p class="Error">Sisäänkirjautuminen epäonnistui.</p>
-		</c:if>
-		<c:if test="${not empty loggedout}">
-			<p class="Info">Uloskirjautuminen onnistui</p>
-		</c:if>
-
-
-	</div>
+	<header>
+		<p class="heading"><spring:message code="albumlist.heading"/></p>
+		<nav>
+			<ul>
+			<sec:authorize var="loggedIn" access="hasRole('ROLE_ADMIN')" />
+			<c:choose>
+				<c:when test="${loggedIn}">
+					<li><p class="nav-element">
+							<spring:message code="user"/> <sec:authentication property="principal.username" />
+						</p></li>
+					<li><a class="nav-element" href="<c:url value="/admin/create"/>">Adminsivulle</a></li>
+					<li><a  class="nav-element"href="<c:url value="j_spring_security_logout" />"><spring:message code="logout"/></a></li>
+				</c:when>
+				<c:otherwise>
+					<li><a class="nav-element" href="<c:url value="login"/>"><spring:message code="login"/></a></li>
+				</c:otherwise>
+			</c:choose>
+			</ul>
+		</nav> 
+	</header>
+	
 	<div id="sisalto">
-	<h1>Äänilevyt</h1>
-	<table class="levylista">
-		<c:forEach items="${levyt}" var="aanilevy">
-			<tr class="levy">
-				<td><img src="${aanilevy.imgLocation}" onerror="this.src='images/ic_album_white_48dp_2x.png'"></td>
-				<td><p>
-					Albumin nimi: <br>
-					Artisti: <br>
-					Julkaisuvuosi: <br>
-				</p></td>
-				<td><p>
-					${aanilevy.title}<br>
-					${aanilevy.artist}<br>
-					${aanilevy.year}
-				</p></td>
-			</tr>
-		</c:forEach>
-	</table>
+			<c:forEach items="${levyt}" var="aanilevy">
+				<div class="levy">
+					<img src="${aanilevy.imgLocation}" alt="Kansikuva" style="width:100%; max-width:180px; height: 180px;">
+					<div class="levytiedot">
+						<p>${aanilevy.title}<br> 
+						${aanilevy.artist}<br>
+						${aanilevy.year}</p>
+					</div>
+				</div>
+			</c:forEach>
 	</div>
 </body>
 </html>

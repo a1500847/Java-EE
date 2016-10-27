@@ -1,3 +1,55 @@
-.pakollinen {color: red;}
+.pakollinen {
+	color: red;
+}
 
-button {font-weight:bold;}
+.button {
+	text-decoration: none;
+	font-size: inherit;
+	cursor: pointer;
+	border: none;
+	color: white;
+	background-color: #669900;
+	float: right;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+input {
+	width: 100%;
+    padding: 12px 20px;
+    margin: 0px 0;
+    box-sizing: border-box;
+	font-size: inherit;
+}
+input:focus {
+    border: 2px solid #555;
+}
+
+legend {
+	padding: 20px;
+}
+
+.virheellinenkentta {
+	background-color: #FFE4E4;
+}
+
+.virheteksti {
+	border-radius: 3px;
+	font-style: italic;
+	color: #ff6666;
+}
+
+.Info, .Error {
+	border: solid 2px #8c8c8c;
+	background-color: #efffcc;
+	padding: 0px 10px 0px 10px;
+	border-radius: 3px;
+	margin: 10px;
+	font-style: italic;
+	text-align: center;
+}
+
+.Error {
+	background-color: #FFE4E4;
+	color: #ff6666;
+}

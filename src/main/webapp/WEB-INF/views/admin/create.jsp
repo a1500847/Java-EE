@@ -13,42 +13,61 @@
 <title><spring:message code="admin.create.pagetitle"/></title>
 </head>
 <body>
-	<div id="header">
-		Kirjautuneena:
-		<sec:authentication property="principal.username" />
-		<a href="<c:url value="../"/>"><spring:message code="back"/></a> <a
-			href="../j_spring_security_logout">Kirjaudu ulos</a>
-	</div>
-	<div id="sisalto">
-		<h1><spring:message code="admin.create.heading"/></h1>
 
+
+<header>
+		<p class="heading"><spring:message code="admin.create.heading"/></p>
+		<nav>
+			<ul>
+			<sec:authorize var="loggedIn" access="hasRole('ROLE_ADMIN')" />
+			<c:choose>
+				<c:when test="${loggedIn}">
+					<li><p class="nav-element">
+							<spring:message code="user"/> <sec:authentication property="principal.username" />
+						</p></li>
+					<li><a class="nav-element" href="<c:url value="../"/>"><spring:message code="back"/></a></li>
+					<li><a  class="nav-element"href="<c:url value="../j_spring_security_logout" />"><spring:message code="logout"/></a></li>
+				</c:when>
+				<c:otherwise>
+					<li><a class="nav-element" href="<c:url value="login"/>"><spring:message code="login"/></a></li>
+				</c:otherwise>
+			</c:choose>
+			</ul>
+		</nav> 
+	</header>
+	
+	<div id="sisalto">
+	<div class="keskita">
 		<form:form modelAttribute="aanilevy" method="post">
 			<fieldset>
-				<legend><spring:message code="admin.create.legend"/></legend>
-				
+				<legend><spring:message code="admin.create.legend" /></legend>
 				<spring:hasBindErrors name="aanilevy">
-					<p class="virheotsikko"><spring:message code="admin.create.errors" />:</p>
-					<div class="virheblokki"><form:errors path="*"/></div>
+					<p class="Error"><spring:message code="admin.create.errors" />:</p>
 				</spring:hasBindErrors>
 				<p>
+					<form:errors path="title" cssClass="virheteksti"/><br>
 					<form:label path="title"><spring:message code="admin.create.title"/><span class="pakollinen">*</span> </form:label>
-					<form:input path="title" cssErrorClass="virheellinenkentta"/> <form:errors path="title" cssClass="virheteksti"/>
+					<form:input path="title" cssErrorClass="virheellinenkentta"/> 
+				</p>
+				<p>	
+					<form:errors path="artist" cssClass="virheteksti"/><br>
+					<form:label path="artist"><spring:message code="admin.create.artist"/><span class="pakollinen">*</span></form:label>
+					<form:input path="artist" cssErrorClass="virheellinenkentta"/> 
 				</p>
 				<p>
-					<form:label path="artist"><spring:message code="admin.create.artist"/><span class="pakollinen">*</span> </form:label>
-					<form:input path="artist" cssErrorClass="virheellinenkentta"/> <form:errors path="artist" cssClass="virheteksti"/>
+					<form:errors path="year" cssClass="virheteksti"/><br>
+					<form:label path="year"><spring:message code="admin.create.year"/><span class="pakollinen">*</span></form:label>
+					<form:input path="year" cssErrorClass="virheellinenkentta"/> 
 				</p>
-				<p>
-					<form:label path="year"><spring:message code="admin.create.year"/><span class="pakollinen">*</span> </form:label>
-					<form:input path="year" cssErrorClass="virheellinenkentta"/> <form:errors path="year" cssClass="virheteksti"/>
-				</p>
-				<p>
+				<p>	
+					<br><br>
 					<form:label path="imgLocation"><spring:message code="admin.create.imglocation"/> </form:label>
-					<form:input path="imgLocation" />
+					<form:input path="imgLocation" cssErrorClass="virheellinenkentta"/>
 				</p>
-				<button type="submit"><spring:message code="admin.create.save"/></button>
+				<button class="button" type="submit" class="pure-button"><spring:message code="admin.create.save"/></button>
 			</fieldset>
 		</form:form>
+		</div>
 	</div>
 </body>
 </html>

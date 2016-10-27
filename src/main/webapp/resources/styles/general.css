@@ -1,30 +1,64 @@
-h1 {
-	text-align:center;
-	font-family: arial;
+body, header p{
+	font-family: 'Open Sans', sans-serif;
+	margin:0;
 }
 
-.levylista {
-	
-	margin: 0 auto; 
-	overflow:auto;
-	border-spacing: 0;
+header {
+	background-color: #2f3033;
+	text-align: center;
+	color: white;
+	line-height: 3em;
+}
+
+nav {
+	position:absolute;
+	top:0;
+	right:0;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+}
+
+nav ul li {
+	display: inline;
+	padding-right: 30px;
+}
+
+nav a, nav p {
+	text-decoration: none;
+	color: white;
+}
+
+.nav-element{display:inline;}
+
+#sisalto {
+	width: 60%;
+	margin: 0 auto;
+	padding-top: 30px;
+}
+
+.keskita {
+	width:450px;
+	margin: 0 auto;
 }
 
 .levy {
-	height:7em;
+	display: inline-block;
+	margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
 }
 
-.levy img {height:7em;}
-
-.levy td {
-	font-family: arial;
-	font-size: 11pt;
-	padding:0px 100px 0px 0px;
+.levy img {
+	width: 100%;
+    height: auto;
 }
 
-.levylista #levy:nth-child(even) {
-    background-color: #eee;
+.levytiedot {
+	padding: 10px;
+    text-align: center;
 }
-.levylista #levy:nth-child(odd) {
-    background-color: #fff;
-}
+
