@@ -73,8 +73,7 @@
 	 <sec:authentication-manager>
 			<sec:authentication-provider>
 				<sec:user-service>
-					<sec:user name="testuser" password="testuser" authorities="ROLE_USER" />
-					<sec:user name="mindi" password="123" authorities="ROLE_ADMIN" />
+					<sec:user name="admin" password="admin" authorities="ROLE_ADMIN" />
 				</sec:user-service>
 			</sec:authentication-provider>
 		</sec:authentication-manager>

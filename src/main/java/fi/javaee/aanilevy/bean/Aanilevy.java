@@ -1,7 +1,5 @@
 package fi.javaee.aanilevy.bean;
 
-import java.util.Date;
-
 public interface Aanilevy {
 	
 	public abstract int getId();

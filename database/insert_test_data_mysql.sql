@@ -4,10 +4,26 @@ values (
 	'Saukki ja Oravat', 
 	'Saukki & Oravat', 
 	1960, 
-	'https://dl.dropboxusercontent.com/s/u0gdfqt33l4mjve/saukkijaoravat.jpg?dl=0'),
+	'resources/images/saukkijaoravat.jpg'),
 	
 	('My Way', 
 	'Frank Sinatra', 
 	1969, 
-	'https://dl.dropboxusercontent.com/s/89j8dw6l27yu13n/myway.jpg?dl=0');
+	'resources/images/myway.jpg'),
+	
+	('Joy Spring',
+	'Clifford Brown & Max Roach', 
+	1954, 
+	'https://dl.dropboxusercontent.com/s/obxlmzqk97sfc34/joyspring.jpg?dl=0'),
+	
+	('Naturally',
+	'J.J.Cale', 
+	1971, 
+	'resources/images/naturally.jpg'),
+	
+	('Stories From the City, Stories From the Sea',
+	'PJ Harvey',
+	2000,
+	'https://dl.dropboxusercontent.com/s/r7s4guxth3nbqtk/harvey.jpg?dl=0')
+	;
 	

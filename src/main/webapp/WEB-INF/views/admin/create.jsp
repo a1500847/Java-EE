@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset=UTF-8">
+<meta charset="UTF-8">
 <link type="text/css" rel="stylesheet" href="<c:url value="/resources/styles/general.css" />" />
 <link type="text/css" rel="stylesheet" href="<c:url value="/resources/styles/form.css" />" />
 <title><spring:message code="admin.create.pagetitle"/></title>
@@ -20,16 +20,17 @@
 			<sec:authorize var="loggedIn" access="hasRole('ROLE_ADMIN')" />
 			<c:choose>
 				<c:when test="${loggedIn}">
-					<li><p class="nav-element">
-							<spring:message code="user"/> <sec:authentication property="principal.username" />
-						</p></li>
 					<li><a class="nav-element" href="<c:url value="../"/>"><spring:message code="back"/></a></li>
+					<li><p class="nav-element"><spring:message code="user"/> <sec:authentication property="principal.username" /></p></li>
 					<li><a  class="nav-element"href="<c:url value="../j_spring_security_logout" />"><spring:message code="logout"/></a></li>
 				</c:when>
 				<c:otherwise>
 					<li><a class="nav-element" href="<c:url value="login"/>"><spring:message code="login"/></a></li>
 				</c:otherwise>
 			</c:choose>
+			<li><div id="langsel" class="nav-element">
+				<a href="?lang=en">en</a> | <a href="?lang=fi">fi</a></div>
+			</li>
 			</ul>
 		</nav> 
 	</header>
@@ -41,7 +42,7 @@
 			<fieldset>
 				<legend><spring:message code="admin.create.legend" /></legend>
 				<spring:hasBindErrors name="aanilevy">
-					<p class="Error"><spring:message code="admin.create.errors" />:</p>
+					<p class="Error"><spring:message code="admin.create.errors" /></p>
 				</spring:hasBindErrors>
 				<p>
 					<form:errors path="title" cssClass="virheteksti"/><br>
@@ -59,9 +60,10 @@
 					<form:input type="number" path="year" cssErrorClass="virheellinenkentta"/> 
 				</p>
 				<p>	
-					<br><br>
+					<br><br> 
 					<form:label path="imgLocation"><spring:message code="admin.create.imglocation"/> </form:label>
-					<form:input path="imgLocation"/>
+											<!-- Validointi puuttuu -->
+					<form:input path="imgLocation" readonly="true"/>
 				</p>
 				<button class="button" type="submit"><spring:message code="admin.create.save"/></button>
 			</fieldset>

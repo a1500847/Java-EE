@@ -26,6 +26,7 @@ public class AdminController {
 	@RequestMapping(value = "/create", method = RequestMethod.GET)
 	public String adminsivu(Model model) {
 		Aanilevy tyhjaAanilevy = new AanilevyImpl();
+		tyhjaAanilevy.setImgLocation("resources/images/album_black_48dp.png");
 		model.addAttribute("aanilevy", tyhjaAanilevy);
 		return "admin/create";
 	}
@@ -36,6 +37,7 @@ public class AdminController {
 		if (result.hasErrors()) {
 			return "admin/create";
 		} else {
+			System.out.println(a);
 			dao.talleta(a);
 			return "redirect:/admin/create/" + a.getId();
 		}

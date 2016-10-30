@@ -1,6 +1,11 @@
-body, header p{
+body, header p {
 	font-family: 'Open Sans', sans-serif;
-	margin:0;
+	margin: 0;
+}
+
+h1 {
+	text-align: center;
+	font-size: 30px;
 }
 
 header {
@@ -11,9 +16,9 @@ header {
 }
 
 nav {
-	position:absolute;
-	top:0;
-	right:0;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 nav ul {
@@ -31,7 +36,9 @@ nav a, nav p {
 	color: white;
 }
 
-.nav-element{display:inline;}
+.nav-element {
+	display: inline;
+}
 
 .button {
 	text-decoration: none;
@@ -45,35 +52,34 @@ nav a, nav p {
 	padding: 10px;
 }
 
-#sisalto {
-	width: 60%;
+.keskita {
+	width: 90%;
 	margin: 0 auto;
-	padding-top: 30px;
 }
 
-.keskita {
-	width:450px;
-	margin: 0 auto;
+.levyt {
+	width: 100%;
+	height: 100%;
 }
 
 .levy {
+	width: 100%;
+	position: relative;
 	display: inline-block;
-	margin: 5px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 180px;
+	border-style: solid 1 #8c8c8c;
 }
 
 .levy img {
 	width: 100%;
-    height: auto;
+	height: auto;
 }
 
 .levytiedot {
 	padding: 10px;
-    text-align: center;
-    font-size: 13px;
-    overflow: auto;
+	text-align: center;
+	font-size: 14px;
+	overflow: auto;
+	height: 100px;
 }
 
 .Info, .Error {
@@ -89,4 +95,56 @@ nav a, nav p {
 .Error {
 	background-color: #FFE4E4;
 	color: #ff6666;
+}
+
+.material-icons {
+	z-index: 1;
+	position: absolute;
+	right: 0;
+	padding: 2px;
+	color: black;
+	background-color: rgba(255, 255, 255, .8);
+}
+
+@media ( min-width : 600px) {
+	h1 {
+		font-size: 30px;
+	}
+	#sisalto {
+		width: 80%;
+		margin: 0 auto;
+		overflow: auto;
+	}
+	.levy {
+		width: calc(50% - 10px);
+		margin-right: 8px;
+		margin-bottom: 8px;
+	}
+	.levy:nth-of-type(2n) {
+		margin-right: 0;
+	}
+	.keskita {
+		width: 70%;
+	}
+}
+
+@media ( min-width : 1024px) {
+	h1 {
+		font-size: 40px;
+	}
+	#sisalto {
+		width: 60%;
+	}
+	.levy {
+		width: calc(25% - 10px);
+		margin-right: 8px;
+		margin-bottom: 8px;
+	}
+	.levy:nth-of-type(2n) {
+		margin-right: 8px;
+	}
+	.levy:nth-of-type(4n) {
+		margin-right: 0;
+	}
+	.keskita {width:50%;}
 }

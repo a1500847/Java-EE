@@ -17,6 +17,9 @@
 		<nav>
 			<ul>
 				<li><a class="nav-element" href="<c:url value="/"/>"><spring:message code="back"/></a></li>
+				<li><div id="langsel" class="nav-element">
+					<a href="?lang=en">en</a> | <a href="?lang=fi">fi</a></div>
+				</li>
 			</ul>
 		</nav>
 	</header>
